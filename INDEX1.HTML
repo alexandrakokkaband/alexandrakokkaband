@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandra Kokka Band</title>
+    <!-- Luckiest Guy Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #fff;
+            background: url('fontos.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            z-index: 0;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(10,0,20,0.65); /* Λιγότερο σκοτεινό overlay! */
+            pointer-events: none;
+        }
+        .header {
+            text-align: center;
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 3.3rem;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-top: 0;
+            text-shadow: 2px 3px 0 #e091e6, 0 4px 24px #ff66b2aa;
+            background: #ff66b2e6;
+            border-radius: 0 0 32px 32px;
+            padding: 34px 0 18px 0;
+            box-shadow: 0 2px 30px #e91e6355;
+            position: relative;
+            z-index: 1;
+        }
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 35px 20px 60px 20px;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .main-content {
+            flex: 2 1 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .left-box, .contact-box {
+            background: #ff66b2e9;
+            border-radius: 22px;
+            box-shadow: 0 6px 32px #e91e6333;
+            padding: 32px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+        }
+        .desc {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            line-height: 1.65;
+            color: #36012b;
+        }
+        .band-members-title {
+            color: #c80057;
+            font-size: 1.13rem;
+            font-weight: 700;
+            margin-bottom: 7px;
+            margin-top: 19px;
+            letter-spacing: 1px;
+        }
+        .band-members-list {
+            margin: 0 0 15px 0;
+            padding: 0 0 0 10px;
+            color: #36012b;
+            font-size: 1.08rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+        .video-section-title {
+            font-size: 1.17rem;
+            color: #480029;
+            margin-bottom: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .yt-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .yt-link-box {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 210px;
+            box-shadow: 0 3px 15px #e91e6322;
+            transition: transform 0.18s;
+            text-align: center;
+        }
+        .yt-link-box:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 26px #ff66b2aa;
+        }
+        .yt-link-box img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .yt-link-title {
+            color: #e91e63;
+            font-weight: 600;
+            font-size: 1.03rem;
+            margin: 10px 0 14px 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .contact-box .contact-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: #44001a;
+        }
+        .contact-item {
+            margin-bottom: 11px;
+            color: #320019;
+            font-size: 1.08rem;
+        }
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            background: #e91e63;
+            border-radius: 8px;
+            padding: 4px 12px;
+            margin-left: 7px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .contact-link:hover {
+            background: #fff;
+            color: #e91e63;
+        }
+        .socials {
+            margin-top: 10px;
+            display: flex;
+            gap: 14px;
+        }
+        .social-icon-link {
+            display: flex;
+            align-items: center;
+            color: #e91e63;
+            background: #fff;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.35rem;
+            box-shadow: 0 2px 10px #e91e6333;
+            transition: background 0.2s, color 0.2s, box-shadow 0.18s;
+        }
+        .social-icon-link:hover {
+            background: #e91e63;
+            color: #fff;
+            box-shadow: 0 5px 16px #e91e63aa;
+        }
+        .social-icon-link.fb {
+            color: #fff;
+            background: #4267B2;
+        }
+        .social-icon-link.fb:hover {
+            background: #fff;
+            color: #4267B2;
+        }
+        .photo-box {
+            flex: 1 1 330px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            margin-left: 24px;
+            margin-top: 30px;
+        }
+        .photo-box img {
+            width: 340px;
+            max-width: 95vw;
+            border-radius: 20px;
+            box-shadow: 0 8px 36px #00000044;
+            object-fit: cover;
+        }
+        @media (max-width: 1100px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-content {
+                width: 100%;
+            }
+            .photo-box {
+                margin: 30px 0 0 0;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .header {
+                font-size: 2.1rem;
+                padding: 20px 0 12px 0;
+            }
+            .photo-box img {
+                width: 92vw;
+                min-width: 180px;
+            }
+            .left-box, .contact-box {
+                padding: 18px 7px;
+            }
+            .yt-link-box {
+                width: 99vw;
+                max-width: 220px;
+            }
+            .yt-links {
+                gap: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Alexandra Kokka Band</div>
+    <div class="container">
+        <div class="main-content">
+            <div class="left-box">
+                <div class="desc">
+                    Alexandra Kokka Band είναι ένα δυναμικό μουσικό σχήμα με επίκεντρο την ερμηνεύτρια και δημιουργό Αλεξάνδρα Κόκκα. Με έντονα στοιχεία της σύγχρονης ελληνικής σκηνής, η μπάντα συνδυάζει το έντεχνο και ποπ- ροκ ύφος με πινελιές jazz, soul και παραδοσιακής μουσικής. Το ρεπερτόιό τους περιλαμβάνει πρωτότυπες συνθέσεις καθώς και ιδιαίτερες διασκευές, ερμηνευμένες με ξεχωριστή αισθητική και εκφραστικότητα.
+                    <br><br>
+                    Η μπάντα έχει εμφανιστεί σε σημαντικές μουσικές σκηνές της Ελλάδας και έχει ξεχωρίσει για την ενέργεια και τη μουσική της συνοχή, προσφέροντας ένα πολυστυλιστικό και αυθεντικό μουσικό ταξίδι στο κοινό της.
+                </div>
+                <div class="band-members-title">Μέλη της Μπάντας</div>
+                <div class="band-members-list">
+Guitar-vocals: JonyK
+Bass: Τhodoris Vendras
+Keys: Konstantinos Papageorgiou
+Drums: Thanos Vasilikopoulos
+                </div>
+                <div class="video-section-title">Δείτε τα βίντεο μας:</div>
+                <div class="yt-links">
+                    <a class="yt-link-box" href="https://youtu.be/CN2rQVOVcg4?si=BxnIDSshYRFTHSTg" target="_blank">
+                        <img src="https://img.youtube.com/vi/CN2rQVOVcg4/hqdefault.jpg" alt="Video 1">
+                        <div class="yt-link-title">Video 1</div>
+                    </a>
+                    <a class="yt-link-box" href="https://youtu.be/Z7vKfYYiStw?si=w-on31qHBoG37xqC" target="_blank">
+                        <img src="https://img.youtube.com/vi/Z7vKfYYiStw/hqdefault.jpg" alt="Video 2">
+                        <div class="yt-link-title">Video 2</div>
+                    </a>
+                    <a class="yt-link-box" href="https://youtu.be/kGS1VCRMGsE?si=BpjtReMlLbsRcXQE" target="_blank">
+                        <img src="https://img.youtube.com/vi/kGS1VCRMGsE/hqdefault.jpg" alt="Video 3">
+                        <div class="yt-link-title">Video 3</div>
+                    </a>
+                    <a class="yt-link-box" href="https://youtu.be/BoGASZdhpXM?si=CmDJFnC1GeK_FLgR" target="_blank">
+                        <img src="https://img.youtube.com/vi/BoGASZdhpXM/hqdefault.jpg" alt="Video 4">
+                        <div class="yt-link-title">Video 4</div>
+                    </a>
+                    <a class="yt-link-box" href="https://youtu.be/gFEsLrcr2dw?si=NFdGTHoOPEb-4PyF" target="_blank">
+                        <img src="https://img.youtube.com/vi/gFEsLrcr2dw/hqdefault.jpg" alt="Video 5">
+                        <div class="yt-link-title">Video 5</div>
+                    </a>
+                    <a class="yt-link-box" href="https://youtu.be/gFGSaS5HCio" target="_blank">
+                        <img src="https://img.youtube.com/vi/gFGSaS5HCio/hqdefault.jpg" alt="Video 6">
+                        <div class="yt-link-title">Video 6</div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="contact-title">Επικοινωνία</div>
+                <div class="contact-item">
+                    Email: <a class="contact-link" href="mailto:alexandrakokka3@gmail.com">alexandrakokka3@gmail.com</a>
+                </div>
+                <div class="contact-item">Βρείτε μας στα social:</div>
+                <div class="socials">
+                    <a class="social-icon-link" href="https://www.instagram.com/kokkaalexandra?igsh=MXBjZWxqMDY1ZzI2OA==" target="_blank" title="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M7.75 2C4.35 2 2 4.35 2 7.75v8.5C2 19.65 4.35 22 7.75 22h8.5c3.4 0 5.75-2.35 5.75-5.75v-8.5C22 4.35 19.65 2 16.25 2zm0 2h8.5C18.43 4 20 5.57 20 7.75v8.5c0 2.18-1.57 3.75-3.75 3.75h-8.5C5.57 20 4 18.43 4 16.25v-8.5C4 5.57 5.57 4 7.75 4zm4.25 2.8a5.45 5.45 0 1 0 0 10.9a5.45 5.45 0 0 0 0-10.9zm0 2A3.45 3.45 0 1 1 8.55 12A3.45 3.45 0 0 1 12 8.8zm4.5-.3a1.1 1.1 0 1 0 0 2.2a1.1 1.1 0 0 0 0-2.2z"/></svg>
+                    </a>
+                    <a class="social-icon-link fb" href="https://www.facebook.com/share/17iSM38HPt/" target="_blank" title="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4267B2"/><path d="M15.34 8.54h-1.25V7.84c0-.29.19-.36.33-.36h.89V5.59l-1.23-.01c-1.37 0-1.68 1.03-1.68 1.68v1.28h-1V10.5h1v4.91h2.01V10.5h1.13l.13-1.96z" fill="#fff"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="1000014392.jpg" alt="Alexandra Kokka">
+        </div>
+    </div>
+</body>
+</html>
